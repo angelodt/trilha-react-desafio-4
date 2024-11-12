@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 
 export const ButtonContainer = styled.button`
@@ -9,9 +9,12 @@ export const ButtonContainer = styled.button`
 
     border: 1px solid #81259D;
     border-radius: 21px;
+    ${({disabled}) => !disabled && css`
 
-    &:hover {
-        opacity: 0.6;
-        cursor:pointer;
+        &:hover {
+            opacity: 0.6;
+            cursor:pointer;
+        }
+        `
     }
 `

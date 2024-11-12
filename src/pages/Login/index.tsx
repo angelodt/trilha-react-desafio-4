@@ -27,6 +27,8 @@ const Login = () => {
     defaultValues,
     reValidateMode: "onChange",
   });
+ 
+  console.log("formValido:", isValid);
 
   return (
     <Container>
@@ -38,7 +40,7 @@ const Login = () => {
             name="email"
             placeholder="Email"
             control={control}
-            errorMessage={errors?.email?.message}
+            errorMessage={errors?.email?.message}            
           />
           <Spacing />
           <Input
@@ -46,10 +48,10 @@ const Login = () => {
             type="password"
             placeholder="Senha"
             control={control}
-            errorMessage={errors?.password?.message}
+            errorMessage={errors?.password?.message}            
           />
           <Spacing />
-          <Button title="Entrar" />
+          <Button title="Entrar" disabled={!isValid} />
         </Column>
       </LoginContainer>
     </Container>
